@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .01em;
+      }
+
+      .cls-2 {
+        font-family: DarkerGrotesque-Medium, 'Darker Grotesque';
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 22px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #231f20;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: DarkerGrotesque-Light, 'Darker Grotesque';
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        font-size: 14px;
+      }
+
+      .cls-5 {
+        font-family: AbadiMTPro-ExtraLight, 'Abadi MT Pro';
+        font-size: 54px;
+        font-weight: 200;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-9 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: .25px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.01em;
+      }
+    </style>
+  </defs>
+  <g id="Rings">
+    <g>
+      <circle class="cls-9" cx="83.31" cy="280.49" r="50.38"/>
+      <circle class="cls-9" cx="97.31" cy="289.49" r="50.38"/>
+      <circle class="cls-9" cx="113.31" cy="296.49" r="50.38"/>
+      <circle class="cls-9" cx="130.31" cy="296.49" r="50.38"/>
+    </g>
+  </g>
+  <g id="Dots">
+    <g>
+      <circle class="cls-6" cx="206.15" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="214.77" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="223.38" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="232.72" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="242.05" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="251.39" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="260.73" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="270.06" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="279.4" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="288.73" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="298.07" cy="294.76" r="2.07"/>
+      <circle class="cls-6" cx="307.4" cy="294.76" r="2.07"/>
+    </g>
+    <text class="cls-3" transform="translate(188.83 276.67)"><tspan x="0" y="0" xml:space="preserve">.     .     .     .     .     .     .     .     .</tspan></text>
+    <text class="cls-2" transform="translate(203.6 283.1)"><tspan x="0" y="0" xml:space="preserve">.     .     .     .     .     .     .     .     .</tspan></text>
+  </g>
+  <g id="Creative_Design" data-name="Creative Design">
+    <text class="cls-5" transform="translate(639.77 284.67)"><tspan x="0" y="0">C</tspan><tspan class="cls-10" x="29.81" y="0">r</tspan><tspan x="44.87" y="0">eat</tspan><tspan class="cls-1" x="110.1" y="0">i</tspan><tspan x="120.9" y="0">ve Design</tspan></text>
+    <text class="cls-4" transform="translate(323.64 296.55)"><tspan x="0" y="0" xml:space="preserve">Dope...    </tspan><tspan class="cls-8" x="46.77" y="0">F</tspan><tspan class="cls-7" x="53.07" y="0">r</tspan><tspan x="56.66" y="0">esh!</tspan></text>
+  </g>
+</svg>
