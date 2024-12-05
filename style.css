@@ -28,6 +28,7 @@ body {
 #bannerImage {
 	background-color: none;
 	background-size: 1000px 150px;
+	clear: both;
 }
 
 #contentB {
@@ -40,6 +41,7 @@ h1 {
   color: black;
   font-family: "Bebas Neue";
   text-align: center;
+  width: 80%;	
   padding: 0px 0px;
   margin: 10px 0px 0px 0px;
   text-decoration: none;
@@ -114,4 +116,8 @@ footer article h3 {
 	font-family: "Darker Grotesque", sans-serif;
 	font-style: bold;
 	font-weight: 400;
+}
+
+centerJustification {
+	width: 80%;
 }
