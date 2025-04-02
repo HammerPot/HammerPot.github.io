@@ -1,5 +1,5 @@
 <h1 class="text-5xl text-center m-4 pt-1"> HammerPot</h1>
-<h3 class="text-3xl mx-32"> Welcome!</h3>
+<h3 class="text-3xl text-center mx-32"> Welcome!</h3>
 <br>
 <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-start mt-3 mx-4 lg:mx-32 ">
     <img src="/images/hammerpot.png" alt="HammerPot Logo" class="rounded-full w-1/5 m-4">
