@@ -5,14 +5,14 @@
 		{image: "/images/showcase/flower2.jpeg", alt: "A flower, again", text: "Flower TWO", type: ""},
 		{image: "/images/showcase/bee.JPG", alt: "A close up of a bee", text: "Bee", type: ""},
 		{image: "/images/showcase/flower.jpeg", alt: "A flower", text: "Flower", type: ""},
+		{video: "/images/showcase/beemovie.mov", alt: "A video of a bee", text: "Bee Video", type: ""},
 		{image: "/images/showcase/beachpano.JPG", alt: "A panorama of a beach", text: "Beach Panorama", type: "panorama_landscape"},
 		{image: "/images/showcase/bridgepano.JPG", alt: "A panorama of a bridge", text: "Bridge Panorama", type: "panorama_portrait"},
 		{image: "/images/showcase/car.JPG", alt: "A car engine", text: "Car", type: ""},
 		{image: "/images/showcase/driver.JPG", alt: "A driver statue", text: "Driver Statue", type: ""},
-		{video: "/images/showcase/beemovie.mov", alt: "A video of a bee", text: "Bee Video", type: ""},
+		{image: "/images/showcase/morningbeams.JPG", alt: "An intersection with the morning sun beaming brightly", text: "Intersection with LIGHT", type: ""},
 		{image: "/images/showcase/internals.JPG", alt: "The internal circuitry of an Exit Sign", text: "Exit Sign Internals", type: ""},
 		{image: "/images/showcase/lizard.JPG", alt: "A lizard in a tree", text: "Lizard", type: ""},
-		{image: "/images/showcase/morningbeams.JPG", alt: "An intersection with the morning sun beaming brightly", text: "Intersection with LIGHT", type: ""},
 		{image: "/images/showcase/morningscape.JPG", alt: "The morning sky", text: "Morning Sky", type: ""},
 		{image: "/images/showcase/mushhorz.JPG", alt: "A close up of mushrooms in landscape", text: "Mushrooms", type: ""},
 		{image: "/images/showcase/mushvert.JPG", alt: "A close up of mushrooms in portrait", text: "Mushrooms, again", type: ""},
@@ -58,35 +58,36 @@
 			}
 		})
 		media1 = media;
+		console.log(media1)
 	})
 
 </script>
 
-<h1 class="text-5xl text-center m-4 pt-1">Photography</h1>
+<h1 class="text-5xl text-center mb-4 pt-1">Photography</h1>
 
-<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-10 m-4 p-4">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-8 mb-4 p-4">
 	<!-- {#each media as item}
 		{#if item.image}
 			{#if item.type == "panorama_landscape"}
-			<div class="self-center col-span-2">
-				<h3 class="text-3xl text-center">{item.text}</h3>
-				<img src={item.image} alt={item.alt} class="rounded-lg ">
+			<div class="   p-12 col-span-2">
+				  <h3 class=" rounded-t-lg mb-4 text-3xl text-center">{item.text}</h3>
+				<img src={item.image} alt={item.alt} class=" rounded-lg ">
 			</div>
 			{:else if item.type == "panorama_portrait"}
-			<div class="self-center row-span-3">
-				<h3 class="text-3xl text-center">{item.text}</h3>
-				<img src={item.image} alt={item.alt} class="rounded-lg ">
+			<div class="   p-12 row-span-3">
+				  <h3 class=" rounded-t-lg mb-4 text-3xl text-center">{item.text}</h3>
+				<img src={item.image} alt={item.alt} class=" rounded-lg ">
 			</div>
 			{:else}
-			<div class="self-center">
-				<h3 class="text-3xl text-center">{item.text}</h3>
-				<img src={item.image} alt={item.alt} class="rounded-lg">
+			<div class="   p-12">
+				  <h3 class=" rounded-t-lg mb-4 text-3xl text-center">{item.text}</h3>
+				<img src={item.image} alt={item.alt} class=" rounded-lg">
 			</div>
 			{/if}
 		{:else if item.video}
-			<div class="self-center">
-				<h3 class="text-3xl text-center">{item.text}</h3>
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+			<div class="   p-12">
+				  <h3 class=" rounded-t-lg mb-4 text-3xl text-center">{item.text}</h3>
+				<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
 			</div>
 		{:else}
 			<p class="text-color-white">Invalid media type!</p>
@@ -96,81 +97,81 @@
 
 {#each media1 as item}
 	{#if item.type == "panorama_landscape"}
-		<div class="self-center lg:col-span-3 md:col-span-2 col-span-1" id={item.type}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class="   p-12 lg:col-span-3 md:col-span-2 col-span-1" id={item.type}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{:else if item.type == "panorama_portrait"}
-		<div class="self-center row-span-3 " id={item.type}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class="   p-12 row-span-3 " id={item.type}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{:else if item.type == "landscape"}
-		<div class="self-center col-span-1 " id={item.type}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class="   p-12 lg:col-span-2 md:col-span-2 col-span-1" id={item.type}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{:else if item.type == "portrait"}
-		<div class="self-center row-span-2 " id={item.type}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class=" flex flex-col justify-center   p-12 row-span-2" id={item.type}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{:else if item.type == "square"}
-		<div class="self-center row-span-1 col-span-1 " id={item.type}>}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class="   p-12 row-span-1 col-span-1 " id={item.type}>}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{:else}
-		<div class="self-center " id={item.type}>
-			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
+		<div class="   p-12 " id={item.type}>
+			  <h3 class=" rounded-t-lg mb-4 lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<Lazy keep={true}>
-					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<img src={item.image} alt={item.alt} class=" rounded-lg" id={item.type}>
+				<!-- </Lazy> -->
 			{:else if item.video}
-				<Lazy keep={true}>
-					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
-				</Lazy>
+				<!-- <Lazy keep={true}> -->
+					<video src={item.video} aria-label={item.alt} class=" rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				<!-- </Lazy> -->
 				{/if}
 		</div>
 	{/if}
