@@ -99,7 +99,7 @@
 {#each media1 as item}
 	{#if item.type == "panorama_landscape"}
 		<div class="self-center col-span-3 " id={item.type}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
@@ -108,7 +108,7 @@
 		</div>
 	{:else if item.type == "panorama_portrait"}
 		<div class="self-center row-span-3 " id={item.type}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
@@ -117,16 +117,16 @@
 		</div>
 	{:else if item.type == "landscape"}
 		<div class="self-center col-span-1 " id={item.type}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline></video>
 			{/if}
 		</div>
 	{:else if item.type == "portrait"}
 		<div class="self-center row-span-2 " id={item.type}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
@@ -135,7 +135,7 @@
 		</div>
 	{:else if item.type == "square"}
 		<div class="self-center row-span-1 col-span-1 " id={item.type}>}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
@@ -144,7 +144,7 @@
 		</div>
 	{:else}
 		<div class="self-center " id={item.type}>
-			<h3 class="text-3xl text-center">{item.text}</h3>
+			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
 			{:else if item.video}
