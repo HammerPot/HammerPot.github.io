@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
+	import Lazy from 'svelte-lazy';
 	var media = [
 		{image: "/images/showcase/flower2.jpeg", alt: "A flower, again", text: "Flower TWO", type: ""},
 		{image: "/images/showcase/bee.JPG", alt: "A close up of a bee", text: "Bee", type: ""},
@@ -60,8 +60,6 @@
 		media1 = media;
 	})
 
-	console.log(media)
-	console.log(media1)
 </script>
 
 <h1 class="text-5xl text-center m-4 pt-1">Photography</h1>
@@ -88,7 +86,7 @@
 		{:else if item.video}
 			<div class="self-center">
 				<h3 class="text-3xl text-center">{item.text}</h3>
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
 			</div>
 		{:else}
 			<p class="text-color-white">Invalid media type!</p>
@@ -101,55 +99,79 @@
 		<div class="self-center lg:col-span-3 md:col-span-2 col-span-1" id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{:else if item.type == "panorama_portrait"}
 		<div class="self-center row-span-3 " id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{:else if item.type == "landscape"}
 		<div class="self-center col-span-1 " id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{:else if item.type == "portrait"}
 		<div class="self-center row-span-2 " id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{:else if item.type == "square"}
 		<div class="self-center row-span-1 col-span-1 " id={item.type}>}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{:else}
 		<div class="self-center " id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
-				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				<Lazy keep={true}>
+					<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+				</Lazy>
 			{:else if item.video}
-				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
-			{/if}
+				<Lazy keep={true}>
+					<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback ></video>
+				</Lazy>
+				{/if}
 		</div>
 	{/if}
 {/each}
