@@ -66,7 +66,7 @@
 
 <h1 class="text-5xl text-center m-4 pt-1">Photography</h1>
 
-<div class="grid grid-cols-3 grid-flow-row-dense gap-10 m-4 p-4">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-row-dense gap-10 m-4 p-4">
 	<!-- {#each media as item}
 		{#if item.image}
 			{#if item.type == "panorama_landscape"}
@@ -98,7 +98,7 @@
 
 {#each media1 as item}
 	{#if item.type == "panorama_landscape"}
-		<div class="self-center col-span-3 " id={item.type}>
+		<div class="self-center lg:col-span-3 md:col-span-2 col-span-1" id={item.type}>
 			<h3 class="lg:text-3xl md:text-xl text-l text-center">{item.text}</h3>
 			{#if item.image}
 				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
