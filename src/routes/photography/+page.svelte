@@ -1,5 +1,7 @@
 <script lang="ts">
-	const media = [
+	import { onMount } from 'svelte';
+
+	var media = [
 		{image: "/images/showcase/flower2.jpeg", alt: "A flower, again", text: "Flower TWO", type: ""},
 		{image: "/images/showcase/bee.JPG", alt: "A close up of a bee", text: "Bee", type: ""},
 		{image: "/images/showcase/flower.jpeg", alt: "A flower", text: "Flower", type: ""},
@@ -19,35 +21,53 @@
 		{image: "/images/showcase/squirrel.JPG", alt: "A squirrel", text: "Squirrel", type: ""},
 		{image: "/images/showcase/sunsolo.jpeg", alt: "The sun behind a rooftop", text: "Sun Silhouette", type: ""}
 	]
+	let media1 = media
+	// console.log(media)
+	// console.log(media.length)
+	onMount(() => {
 		media.forEach(item => {
-			if (item.image) {
-				// const image = new Image();
-				// image.src = item.image;
-				// if (image.naturalHeight > image.naturalWidth) {
-				// 	item.type = "portrait";
-				// }
-				// else if (image.naturalWidth > image.naturalHeight) {
-				// 	item.type = "landscape";
-				// }
-			} else if (item.video) {
-				// const video = document.createElement('video');
-				// video.src = item.video;
-				// if (video.videoWidth > video.videoHeight) {
-				// 	item.type = "landscape";
+			if (item.type != "panorama_landscape" && item.type != "panorama_portrait") {
+				if (item.image) {
+					const image = new Image();
+					image.src = item.image;
+					if (image.naturalHeight > image.naturalWidth) {
+						item.type = "portrait";
+					}
+					else if (image.naturalWidth > image.naturalHeight) {
+						item.type = "landscape";
+					}
+					else if (image.naturalWidth == image.naturalHeight) {
+						item.type = "square";
+					}
+				} else if (item.video) {
+					const video = document.createElement('video');
+					video.src = item.video;
+					video.addEventListener('loadedmetadata', () => {
+						if (video.videoWidth > video.videoHeight) {
+							item.type = "landscape";
 
-				// }
-				// else if (video.videoHeight > video.videoWidth) {
-				// 	item.type = "portrait";
-				// }
+						}
+						else if (video.videoHeight > video.videoWidth) {
+							item.type = "portrait";
+						}
+						else if (video.videoWidth == video.videoHeight) {
+							item.type = "square";
+						}
+					})
+				}
 			}
 		})
+		media1 = media;
+	})
 
+	console.log(media)
+	console.log(media1)
 </script>
 
 <h1 class="text-5xl text-center m-4 pt-1">Photography</h1>
 
-<div class="grid grid-cols-3 grid-flow-row-dense gap-4 m-4 p-4">
-	{#each media as item}
+<div class="grid grid-cols-3 grid-flow-row-dense gap-10 m-4 p-4">
+	<!-- {#each media as item}
 		{#if item.image}
 			{#if item.type == "panorama_landscape"}
 			<div class="self-center col-span-2">
@@ -73,5 +93,64 @@
 		{:else}
 			<p class="text-color-white">Invalid media type!</p>
 		{/if} 
-	{/each}
+	{/each} -->
+
+
+{#each media1 as item}
+	{#if item.type == "panorama_landscape"}
+		<div class="self-center col-span-3 " id={item.type}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{:else if item.type == "panorama_portrait"}
+		<div class="self-center row-span-3 " id={item.type}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{:else if item.type == "landscape"}
+		<div class="self-center col-span-1 " id={item.type}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{:else if item.type == "portrait"}
+		<div class="self-center row-span-2 " id={item.type}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{:else if item.type == "square"}
+		<div class="self-center row-span-1 col-span-1 " id={item.type}>}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{:else}
+		<div class="self-center " id={item.type}>
+			<h3 class="text-3xl text-center">{item.text}</h3>
+			{#if item.image}
+				<img src={item.image} alt={item.alt} class="rounded-lg" id={item.type}>
+			{:else if item.video}
+				<video src={item.video} aria-label={item.alt} class="rounded-lg" autoplay loop muted></video>
+			{/if}
+		</div>
+	{/if}
+{/each}
 </div>
